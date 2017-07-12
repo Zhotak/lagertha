@@ -1,3 +1,5 @@
-*.project
-.git/
+.project
+.classpath
+.gradle/*
+.git/*
 
