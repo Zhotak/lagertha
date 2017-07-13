@@ -2,6 +2,7 @@ package com.roadtovalhalla.games.lagertha.adapter;
 
 import static com.roadtovalhalla.games.lagertha.render.colors.Color.BLUE;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import com.badlogic.gdx.ApplicationAdapter;
@@ -44,6 +45,7 @@ public class LagerthaEngine extends ApplicationAdapter {
 	}
 
 	private void loadSprites() {
+		sprites = new LinkedList<AbstractLagerthaSprite>();
 		sprites.add(new DogSprite(new TextureRegion(new Texture("perrito.png"))));
 		sprites.add(new CatSprite(new TextureRegion(new Texture("cat.png"))));
 	}

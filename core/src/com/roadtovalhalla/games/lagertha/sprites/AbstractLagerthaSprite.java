@@ -10,6 +10,7 @@ public abstract class AbstractLagerthaSprite extends Sprite implements LagerthaS
 
 	public AbstractLagerthaSprite(TextureRegion texture) {
 		super(texture);
+		this.setBounds(0, 0, 150, 150);
 	}
 
 	public void processActions(List<Action> actions) {
