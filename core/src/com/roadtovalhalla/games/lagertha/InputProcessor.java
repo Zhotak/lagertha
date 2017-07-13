@@ -1,51 +1,44 @@
 package com.roadtovalhalla.games.lagertha;
 
+import static com.roadtovalhalla.games.lagertha.actions.Action.CLICK;
+import static com.roadtovalhalla.games.lagertha.actions.Action.MOVE_DOWN;
+import static com.roadtovalhalla.games.lagertha.actions.Action.MOVE_LEFT;
+import static com.roadtovalhalla.games.lagertha.actions.Action.MOVE_RIGHT;
+import static com.roadtovalhalla.games.lagertha.actions.Action.MOVE_UP;
+
+import java.util.LinkedList;
+import java.util.List;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.roadtovalhalla.games.lagertha.render.colors.RGB;
+import com.roadtovalhalla.games.lagertha.actions.Action;
 
 public class InputProcessor {
-	
-	public void processInput() {
-		this.processKeyboard();
-		this.processMouse();
+
+	public List<Action> processInput() {
+		List<Action> actions = new LinkedList<Action>();
+		this.processKeyboard(actions);
+		this.processMouse(actions);
+		return actions;
+
 	}
 
-	private void processMouse() {
-		float x = Gdx.input.getX();
-		float y = screen.getHeight() - Gdx.input.getY();
-		
-		if(Gdx.input.isTouched()){
-			xCat = x;
-			yCat = y;
-		}
-		
-		if(Gdx.input.justTouched())
-			screen.setColor(new RGB(0f, 1f, 0f), 0.5f);
-			
-		dogSprite.setPosition(x, y);
+	private void processMouse(List<Action> actions) {
+		if (Gdx.input.justTouched())
+			actions.add(CLICK);
 	}
 
-	private void processKeyboard() {
-		boolean isRightPressed = Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.isKeyPressed(Input.Keys.RIGHT);
-		boolean isLeftPressed = Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.isKeyPressed(Input.Keys.LEFT);
-		boolean isUpPressed = Gdx.input.isKeyPressed(Input.Keys.W) || Gdx.input.isKeyPressed(Input.Keys.UP);
-		boolean isDownPressed = Gdx.input.isKeyPressed(Input.Keys.S) || Gdx.input.isKeyPressed(Input.Keys.DOWN);
+	private void processKeyboard(List<Action> actions) {
+		if (Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.isKeyPressed(Input.Keys.RIGHT))
+			actions.add(MOVE_RIGHT);
 
-		float aceleration = Gdx.graphics.getDeltaTime();
+		if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.isKeyPressed(Input.Keys.LEFT))
+			actions.add(MOVE_LEFT);
 
-		if (isRightPressed)
-			xCat = xCat + velocity * aceleration;
+		if (Gdx.input.isKeyPressed(Input.Keys.W) || Gdx.input.isKeyPressed(Input.Keys.UP))
+			actions.add(MOVE_UP);
 
-		if (isLeftPressed)
-			xCat = xCat - velocity * aceleration;
-
-		if (isUpPressed)
-			yCat = yCat + velocity * aceleration;
-
-		if (isDownPressed)
-			yCat = yCat - velocity * aceleration;
-
-		catSprite.setPosition(xCat, yCat);
+		if (Gdx.input.isKeyPressed(Input.Keys.S) || Gdx.input.isKeyPressed(Input.Keys.DOWN))
+			actions.add(MOVE_DOWN);
 	}
 }
