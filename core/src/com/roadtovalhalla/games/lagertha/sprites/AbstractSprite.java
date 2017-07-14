@@ -6,9 +6,9 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.roadtovalhalla.games.lagertha.actions.Action;
 
-public abstract class AbstractLagerthaSprite extends Sprite implements LagerthaSprite {
+public abstract class AbstractSprite extends Sprite implements LagerthaSprite {
 
-	public AbstractLagerthaSprite(TextureRegion texture) {
+	public AbstractSprite(TextureRegion texture) {
 		super(texture);
 		this.setBounds(0, 0, 150, 150);
 	}

@@ -12,8 +12,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.roadtovalhalla.games.lagertha.InputProcessor;
 import com.roadtovalhalla.games.lagertha.actions.Action;
-import com.roadtovalhalla.games.lagertha.render.screens.Screen;
-import com.roadtovalhalla.games.lagertha.sprites.AbstractLagerthaSprite;
+import com.roadtovalhalla.games.lagertha.render.screens.ScreenSettings;
+import com.roadtovalhalla.games.lagertha.screens.MainScreen;
+import com.roadtovalhalla.games.lagertha.sprites.AbstractSprite;
 import com.roadtovalhalla.games.lagertha.sprites.CatSprite;
 import com.roadtovalhalla.games.lagertha.sprites.DogSprite;
 
@@ -21,8 +22,10 @@ public class MainGame extends Game {
 
 	private SpriteBatch batch;
 	private BitmapFont font;
-	private Screen screen;
-	private List<AbstractLagerthaSprite> sprites;
+	private MainScreen mainScreen;
+	private MainScreen mainScreen2;
+	private ScreenSettings settings;
+	private List<AbstractSprite> sprites;
 	private InputProcessor inputProcessor;
 
 	@Override
@@ -30,32 +33,22 @@ public class MainGame extends Game {
 		inputProcessor = new InputProcessor();
 		batch = new SpriteBatch();
 		font = new BitmapFont();
-		screen = new Screen();
-
+		settings = new ScreenSettings();
+		this.loadScreens();
 		this.loadSprites();
-
-		screen.setColor(BLUE, 1);
+		settings.setColor(BLUE, 1);
+		this.setScreen(mainScreen);
 	}
 
-	@Override
-	public void render() {
-		List<Action> actions = inputProcessor.processInput();
-		sprites.forEach(s -> s.processActions(actions));
-		this.renderGame();
+	private void loadScreens() {
+		mainScreen = new MainScreen(this, "Pantalla 1");
+		mainScreen2 = new MainScreen(this, "Pantalla 2");
 	}
 
 	private void loadSprites() {
-		sprites = new LinkedList<AbstractLagerthaSprite>();
+		sprites = new LinkedList<AbstractSprite>();
 		sprites.add(new DogSprite(new TextureRegion(new Texture("perrito.png"))));
 		sprites.add(new CatSprite(new TextureRegion(new Texture("cat.png"))));
-	}
-
-	private void renderGame() {
-		screen.paint();
-		batch.begin();
-		sprites.forEach(s -> s.draw(batch));
-		font.draw(batch, "Hello cat", 50, 50);
-		batch.end();
 	}
 
 	@Override
@@ -64,5 +57,29 @@ public class MainGame extends Game {
 		batch.dispose();
 		sprites.forEach(s -> s.dispose());
 		font.dispose();
+	}
+
+	public SpriteBatch getBatch() {
+		return batch;
+	}
+
+	public BitmapFont getFont() {
+		return font;
+	}
+
+	public MainScreen getMainScreen() {
+		return mainScreen;
+	}
+
+	public MainScreen getMainScreen2() {
+		return mainScreen2;
+	}
+
+	public InputProcessor getInputProcessor() {
+		return inputProcessor;
+	}
+	
+	public ScreenSettings getSettings(){
+		return settings;
 	}
 }

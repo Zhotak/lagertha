@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.roadtovalhalla.games.lagertha.render.colors.Color;
 import com.roadtovalhalla.games.lagertha.render.colors.RGB;
 
-public class Screen {
+public class ScreenSettings {
 
 	public void setColor(RGB rgb, float alpha) {
 		Gdx.gl.glClearColor(rgb.getRed(), rgb.getGreen(), rgb.getBlue(), alpha);

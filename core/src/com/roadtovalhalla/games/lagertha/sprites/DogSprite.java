@@ -6,7 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.roadtovalhalla.games.lagertha.actions.Action;
 
-public class DogSprite extends AbstractLagerthaSprite implements LagerthaSprite {
+public class DogSprite extends AbstractSprite implements LagerthaSprite {
 
 	public DogSprite(TextureRegion texture) {
 		super(texture);

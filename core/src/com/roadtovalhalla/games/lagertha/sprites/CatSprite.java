@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.roadtovalhalla.games.lagertha.actions.Action;
 
-public class CatSprite extends AbstractLagerthaSprite implements LagerthaSprite {
+public class CatSprite extends AbstractSprite implements LagerthaSprite {
 
 	public CatSprite(TextureRegion texture) {
 		super(texture);
