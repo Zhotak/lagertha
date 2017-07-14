@@ -17,7 +17,7 @@ import com.roadtovalhalla.games.lagertha.sprites.AbstractLagerthaSprite;
 import com.roadtovalhalla.games.lagertha.sprites.CatSprite;
 import com.roadtovalhalla.games.lagertha.sprites.DogSprite;
 
-public class LagerthaGame extends Game {
+public class MainGame extends Game {
 
 	private SpriteBatch batch;
 	private BitmapFont font;
