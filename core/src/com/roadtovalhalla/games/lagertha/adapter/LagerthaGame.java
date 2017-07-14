@@ -5,7 +5,7 @@ import static com.roadtovalhalla.games.lagertha.render.colors.Color.BLUE;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -17,7 +17,7 @@ import com.roadtovalhalla.games.lagertha.sprites.AbstractLagerthaSprite;
 import com.roadtovalhalla.games.lagertha.sprites.CatSprite;
 import com.roadtovalhalla.games.lagertha.sprites.DogSprite;
 
-public class LagerthaEngine extends ApplicationAdapter {
+public class LagerthaGame extends Game {
 
 	private SpriteBatch batch;
 	private BitmapFont font;

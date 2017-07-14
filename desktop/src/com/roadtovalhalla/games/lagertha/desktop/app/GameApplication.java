@@ -1,13 +1,13 @@
 package com.roadtovalhalla.games.lagertha.desktop.app;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.roadtovalhalla.games.lagertha.adapter.LagerthaEngine;
+import com.roadtovalhalla.games.lagertha.adapter.LagerthaGame;
 import com.roadtovalhalla.games.lagertha.desktop.configurations.GameConfiguration;
 
 public class GameApplication {
 	
 	private GameConfiguration configuration;
-	private LagerthaEngine adapter;
+	private LagerthaGame adapter;
 	
 	public void startGame(){
 		this.loadConfiguration();
@@ -20,6 +20,6 @@ public class GameApplication {
 	}
 	
 	private void loadAdapter(){
-		adapter = new LagerthaEngine();
+		adapter = new LagerthaGame();
 	}
 }
