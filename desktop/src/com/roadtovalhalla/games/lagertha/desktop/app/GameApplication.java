@@ -1,8 +1,8 @@
 package com.roadtovalhalla.games.lagertha.desktop.app;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.roadtovalhalla.games.lagertha.adapter.MainGame;
 import com.roadtovalhalla.games.lagertha.desktop.configurations.GameConfiguration;
+import com.roadtovalhalla.games.lagertha.game.MainGame;
 
 public class GameApplication {
 	

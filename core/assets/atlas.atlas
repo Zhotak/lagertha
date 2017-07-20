@@ -1,0 +1,27 @@
+
+atlas.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+cat
+  rotate: false
+  xy: 2, 2
+  size: 500, 385
+  orig: 500, 385
+  offset: 0, 0
+  index: -1
+gutt
+  rotate: false
+  xy: 604, 771
+  size: 39, 92
+  orig: 39, 92
+  offset: 0, 0
+  index: -1
+perrito
+  rotate: false
+  xy: 2, 389
+  size: 600, 474
+  orig: 600, 474
+  offset: 0, 0
+  index: -1
