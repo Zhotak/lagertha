@@ -1,7 +1,5 @@
 package com.roadtovalhalla.games.lagertha.game;
 
-import static com.roadtovalhalla.games.lagertha.render.colors.Color.BLUE;
-
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -22,7 +20,6 @@ public class MainGame extends Game {
 		font = new BitmapFont();
 		settings = new ScreenSettings();
 		this.loadScreens();
-		settings.setColor(BLUE, 1);
 		this.setScreen(mainScreen);
 	}
 

@@ -2,20 +2,11 @@ package com.roadtovalhalla.games.lagertha.render.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.roadtovalhalla.games.lagertha.render.colors.Color;
-import com.roadtovalhalla.games.lagertha.render.colors.RGB;
 
 public class ScreenSettings {
 
-	public void setColor(RGB rgb, float alpha) {
-		Gdx.gl.glClearColor(rgb.getRed(), rgb.getGreen(), rgb.getBlue(), alpha);
-	}
-
-	public void setColor(Color color, float alpha) {
-		this.setColor(color.getRGB(), alpha);
-	}
-
 	public void paint() {
+		Gdx.gl.glClearColor(1f, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 	}
 	
