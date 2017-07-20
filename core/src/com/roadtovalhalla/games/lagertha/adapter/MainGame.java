@@ -11,7 +11,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.roadtovalhalla.games.lagertha.InputProcessor;
-import com.roadtovalhalla.games.lagertha.actions.Action;
 import com.roadtovalhalla.games.lagertha.render.screens.ScreenSettings;
 import com.roadtovalhalla.games.lagertha.screens.MainScreen;
 import com.roadtovalhalla.games.lagertha.sprites.AbstractSprite;
